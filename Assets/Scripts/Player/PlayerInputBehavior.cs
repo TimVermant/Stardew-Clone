@@ -25,7 +25,7 @@ public class PlayerInputBehavior : MonoBehaviour
 
     public void PlayerUse(InputAction.CallbackContext context)
     {
-        Debug.Log("Use");
+        m_PlayerBehavior.Use();
     }
 
 }

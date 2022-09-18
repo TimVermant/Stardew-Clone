@@ -24,21 +24,7 @@ public class PlayerMovementBehavior : MonoBehaviour
     }
 
 
-    //[SerializeField] private Camera m_Camera;
-
-
-    //public void MovePlayer(InputAction.CallbackContext context)
-    //{
-    //    m_Movement = context.ReadValue<Vector2>();
-
-
-    //}
-
-    //public void PlayerDirection(InputAction.CallbackContext context)
-    //{
-    //    m_CurrMousePos = m_Camera.ScreenToWorldPoint(context.ReadValue<Vector2>());
-
-    //}
+  
 
     void FixedUpdate()
     {
