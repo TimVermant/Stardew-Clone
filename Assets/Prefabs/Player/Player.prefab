@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1457209623489486946}
   - component: {fileID: 6215881303165095601}
   - component: {fileID: 6047561151799236134}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 5356521569926429958}
   - component: {fileID: 4729443708394679104}
   - component: {fileID: 1331770034}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -253,6 +253,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb30abb0e58971e44a37f6987ef2f38f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_MovementBehavior: {fileID: 5356521569926429958}
+  m_HarvestSquarePrefab: {fileID: 626777775687709949, guid: 9918bd5bbf9a45942962c931b0266453, type: 3}
   m_Tool: {fileID: 4269373695062016543}
 --- !u!114 &1331770034
 MonoBehaviour:

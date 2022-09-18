@@ -26,6 +26,7 @@ public class PlayerInputBehavior : MonoBehaviour
     public void PlayerUse(InputAction.CallbackContext context)
     {
         m_PlayerBehavior.Use();
+        
     }
 
 }
