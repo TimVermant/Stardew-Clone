@@ -11,6 +11,7 @@ public class PlayerBehavior : MonoBehaviour
     [SerializeField] GameObject _Tool;
     private CircleCollider2D _CircleCollider;
     private GameObject _HarvestSquareObject;
+    private BoxCollider2D _HarvestCollider;
 
     //Cooldown system
     private float _UsageCooldown = 0.5f;
@@ -29,6 +30,8 @@ public class PlayerBehavior : MonoBehaviour
 
 
         _HarvestLayer = LayerMask.GetMask("Harvestables");
+        _HarvestCollider = _HarvestSquareObject.GetComponent<BoxCollider2D>();  
+
     }
 
     public void Use()
@@ -37,7 +40,7 @@ public class PlayerBehavior : MonoBehaviour
         {
 
             _Clicked = !_Clicked;
-           // Debug.Log(_Clicked);
+            // Debug.Log(_Clicked);
 
         }
     }
@@ -52,9 +55,19 @@ public class PlayerBehavior : MonoBehaviour
         {
             _CurrentUsage = 0.0f;
         }
-
         _HarvestSquareObject.transform.position = new Vector3(_MovementBehavior.CurrentMousePos.x, _MovementBehavior.CurrentMousePos.y);
+
+        
+        // Disable when mouse is too far
+        float maxDistance = 10.0f;
+
+        float distance = Vector3.Distance(_HarvestSquareObject.transform.position, transform.position );
+       // Debug.Log(_HarvestSquareObject.transform.position);
+        Debug.Log(transform.position);
+        Debug.Log(distance);
+        _HarvestCollider.enabled = distance < maxDistance;
+
     }
 
-  
+
 }

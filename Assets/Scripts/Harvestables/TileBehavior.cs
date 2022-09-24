@@ -15,6 +15,25 @@ public class TileBehavior : MonoBehaviour
 
     private void Start()
     {
+        int randomNr = Random.Range(0, 3);
+        _TileType = (TileType)randomNr;
+        switch (_TileType)
+        {
+            case TileType.ground:
+                _DefaultColor = new Color(154 / 255.0f, 77 / 255.0f, 18 / 255.0f);
+                _SelectedColor = new Color(199 / 255.0f, 77 / 255.0f, 18 / 255.0f);
+                break;
+            case TileType.crop:
+                _DefaultColor = new Color(107 / 255.0f, 210 / 255.0f, 18 / 255.0f);
+                _SelectedColor = new Color(66 / 255.0f, 126 / 255.0f, 16 / 255.0f);
+                break;
+            case TileType.water:
+                _DefaultColor = new Color(30 / 255.0f, 10 / 255.0f, 209 / 255.0f);
+                _SelectedColor = new Color(30 / 255.0f, 10 / 255.0f, 135 / 255.0f);
+                break;
+            default:
+                break;
+        }
         _Renderer.material.color = _DefaultColor;
     }
 
