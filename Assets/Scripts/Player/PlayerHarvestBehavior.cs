@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HarvestableBehavior : MonoBehaviour
+public class PlayerHarvestBehavior : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()

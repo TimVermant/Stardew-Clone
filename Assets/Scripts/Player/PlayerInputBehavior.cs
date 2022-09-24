@@ -5,27 +5,27 @@ using UnityEngine.InputSystem;
 
 public class PlayerInputBehavior : MonoBehaviour
 {
-    [SerializeField] PlayerMovementBehavior m_MovementBehavior;
-    [SerializeField] PlayerBehavior m_PlayerBehavior;
+    [SerializeField] PlayerMovementBehavior _MovementBehavior;
+    [SerializeField] PlayerBehavior _PlayerBehavior;
 
-    [SerializeField] Camera m_MainCamera;
+    [SerializeField] Camera _MainCamera;
 
     public void PlayerMove(InputAction.CallbackContext context)
     {
      
-      m_MovementBehavior.Movement = context.ReadValue<Vector2>();
+      _MovementBehavior.Movement = context.ReadValue<Vector2>();
 
     }
 
     public void PlayerLook(InputAction.CallbackContext context)
     {
       
-      m_MovementBehavior.CurrentMousePos = m_MainCamera.ScreenToWorldPoint(context.ReadValue<Vector2>());
+      _MovementBehavior.CurrentMousePos = _MainCamera.ScreenToWorldPoint(context.ReadValue<Vector2>());
     }
 
     public void PlayerUse(InputAction.CallbackContext context)
     {
-        m_PlayerBehavior.Use();
+        _PlayerBehavior.Use();
         
     }
 

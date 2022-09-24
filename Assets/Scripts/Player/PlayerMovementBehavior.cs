@@ -5,22 +5,22 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovementBehavior : MonoBehaviour
 {
-    [SerializeField] private float m_MovementSpeed = 5.0f;
-    [SerializeField] private Rigidbody2D m_Rigidbody;
+    [SerializeField] private float _MovementSpeed = 5.0f;
+    [SerializeField] private Rigidbody2D _RigidBody;
 
 
-    private Vector2 m_Movement;
+    private Vector2 _Movement;
     public Vector2 Movement
     {
-        get { return m_Movement; }
-        set { m_Movement = value; }
+        get { return _Movement; }
+        set { _Movement = value; }
     }
 
-    private Vector3 m_CurrMousePos;
+    private Vector3 _CurrMousePos;
     public Vector3 CurrentMousePos
     {
-        get { return m_CurrMousePos; }
-        set { m_CurrMousePos = value; }
+        get { return _CurrMousePos; }
+        set { _CurrMousePos = value; }
     }
 
 
@@ -28,13 +28,13 @@ public class PlayerMovementBehavior : MonoBehaviour
 
     void FixedUpdate()
     {
-        m_Rigidbody.MovePosition(m_Rigidbody.position + m_Movement * m_MovementSpeed * Time.fixedDeltaTime);
+        _RigidBody.MovePosition(_RigidBody.position + _Movement * _MovementSpeed * Time.fixedDeltaTime);
 
 
         // Look at mouse pointer
-        Vector3 rotation = m_CurrMousePos - transform.position;
+        Vector3 rotation = _CurrMousePos - transform.position;
         float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
-        m_Rigidbody.SetRotation(Quaternion.Euler(0f, 0f, rotZ));
+        _RigidBody.SetRotation(Quaternion.Euler(0f, 0f, rotZ));
 
     }
 }

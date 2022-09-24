@@ -224,9 +224,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab3565581cf78c4bbac43d959581572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MovementBehavior: {fileID: 5356521569926429958}
-  m_PlayerBehavior: {fileID: 4729443708394679104}
-  m_MainCamera: {fileID: 0}
+  _MovementBehavior: {fileID: 5356521569926429958}
+  _PlayerBehavior: {fileID: 4729443708394679104}
+  _MainCamera: {fileID: 0}
 --- !u!114 &5356521569926429958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,8 +239,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed443a48f3223c043bc1a8bc6bc9b8e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MovementSpeed: 5
-  m_Rigidbody: {fileID: 1669106102238625144}
+  _MovementSpeed: 5
+  _RigidBody: {fileID: 1669106102238625144}
 --- !u!114 &4729443708394679104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,9 +253,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb30abb0e58971e44a37f6987ef2f38f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MovementBehavior: {fileID: 5356521569926429958}
-  m_HarvestSquarePrefab: {fileID: 626777775687709949, guid: 9918bd5bbf9a45942962c931b0266453, type: 3}
-  m_Tool: {fileID: 4269373695062016543}
+  _MovementBehavior: {fileID: 5356521569926429958}
+  _HarvestBehavior: {fileID: 626777775687709949, guid: 9918bd5bbf9a45942962c931b0266453, type: 3}
+  _Tool: {fileID: 4269373695062016543}
 --- !u!114 &1331770034
 MonoBehaviour:
   m_ObjectHideFlags: 0

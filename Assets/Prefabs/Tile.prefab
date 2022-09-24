@@ -10,7 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 336923176061170092}
   - component: {fileID: 8313190824055675384}
-  m_Layer: 0
+  - component: {fileID: 4737148848717288661}
+  - component: {fileID: 5545316465136783982}
+  m_Layer: 7
   m_Name: Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,9 +72,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -341658083
+  m_SortingLayer: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.46679515, g: 0.33383763, b: 0.5849056, a: 1}
   m_FlipX: 0
@@ -84,3 +86,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4737148848717288661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4136380822924988489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1f43a67498e3c9448aaf8c3eeafe31c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _DefaultColor: {r: 1, g: 0, b: 1, a: 1}
+  _SelectedColor: {r: 0, g: 1, b: 0, a: 1}
+  _Renderer: {fileID: 8313190824055675384}
+--- !u!61 &5545316465136783982
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4136380822924988489}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0

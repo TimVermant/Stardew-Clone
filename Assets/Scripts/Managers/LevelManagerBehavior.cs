@@ -4,26 +4,31 @@ using UnityEngine;
 
 public class LevelManagerBehavior : MonoBehaviour
 {
-    private List<Rect> m_LevelGrid;
-    [SerializeField] private int m_CellSize = 1;
-    [SerializeField] private GameObject m_TilePrefab;
-    [SerializeField] private Camera m_MainCamera;
+    private List<GameObject> _LevelGrid;
+
+    [SerializeField] private int _CellSize = 1;
+    [SerializeField] private int _GridSize = 15;
+
+    [SerializeField] private GameObject _TilePrefab;
+    [SerializeField] private Camera _MainCamera;
+
 
     private void Start()
     {
-        m_LevelGrid = new List<Rect>();
-        int width = m_MainCamera.pixelWidth / m_CellSize;
-        int height = m_MainCamera.pixelHeight / m_CellSize;
-        Vector2Int windowPos = new Vector2Int(-width/2,-height/2);
-        for (int i = 0; i < width/2; i++)
+        _LevelGrid = new List<GameObject>();
+        int width = _MainCamera.pixelWidth / _CellSize;
+        int height = _MainCamera.pixelHeight / _CellSize;
+        //Vector2Int windowPos = new Vector2Int(-width / 2, -height / 2);
+        Vector2Int windowPos = new Vector2Int(-_GridSize / 2, -_GridSize / 2);
+        for (int i = 0; i < _GridSize; i++)
         {
-            for (int j = 0; j < height/2; j++)
+            for (int j = 0; j < _GridSize; j++)
             {
-                Rect rect = new Rect(windowPos.x + i * m_CellSize, windowPos.y +  j * m_CellSize, m_CellSize, m_CellSize);
-                m_LevelGrid.Add(rect);
-                Instantiate(m_TilePrefab, rect.position,new Quaternion());
+                Rect rect = new Rect(windowPos.x + i * _CellSize, windowPos.y + j * _CellSize, _CellSize, _CellSize);
+
+                _LevelGrid.Add(Instantiate(_TilePrefab, rect.position, new Quaternion()));
             }
         }
-
+        
     }
 }
