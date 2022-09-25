@@ -7,10 +7,14 @@ public class TileBehavior : MonoBehaviour
     enum TileType { ground, crop, water };
 
     private TileType _TileType = TileType.ground;
+    private bool _TileSelected = false;
 
-    [SerializeField] private Color _DefaultColor = Color.magenta;
-    [SerializeField] private Color _SelectedColor = Color.green;
+
+
     [SerializeField] private SpriteRenderer _Renderer;
+    private Color _DefaultColor = Color.magenta;
+    private Color _SelectedColor = Color.green;
+
 
 
     private void Start()
@@ -40,15 +44,26 @@ public class TileBehavior : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        if (collision.GetComponent<PlayerHarvestBehavior>() != null)
+        PlayerHarvestBehavior playerHarvest = collision.GetComponent<PlayerHarvestBehavior>();
+        if (playerHarvest != null)
+        {
             _Renderer.material.color = _SelectedColor;
+            _TileSelected = true;
+            if (playerHarvest.IsClicked)
+            {
+                gameObject.SetActive(false);
+            }
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.GetComponent<PlayerHarvestBehavior>() != null)
+        {
+
             _Renderer.material.color = _DefaultColor;
+            _TileSelected = false;
+        }
     }
 
 }

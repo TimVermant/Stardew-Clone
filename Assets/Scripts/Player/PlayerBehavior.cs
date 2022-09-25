@@ -22,11 +22,18 @@ public class PlayerBehavior : MonoBehaviour
 
     private bool _UsePerformed = false;
     private bool _Clicked = false;
+    public bool Clicked
+    {
+        get { return _Clicked; }
+        set { _Clicked = value; }
+    }
 
     private void Start()
     {
         _HarvestSquareObject = Instantiate(_HarvestBehavior);
         _CircleCollider = _Tool.GetComponent<CircleCollider2D>();
+        // Dirty dirty code
+        GetComponent<PlayerInputBehavior>().HarvestBehavior = _HarvestSquareObject.GetComponent<PlayerHarvestBehavior>(); 
 
 
         _HarvestLayer = LayerMask.GetMask("Harvestables");
@@ -34,16 +41,6 @@ public class PlayerBehavior : MonoBehaviour
 
     }
 
-    public void Use()
-    {
-        if (_CurrentUsage == 0.0f)
-        {
-
-            _Clicked = !_Clicked;
-            // Debug.Log(_Clicked);
-
-        }
-    }
 
     private void Update()
     {
@@ -62,9 +59,6 @@ public class PlayerBehavior : MonoBehaviour
         float maxDistance = 10.0f;
 
         float distance = Vector3.Distance(_HarvestSquareObject.transform.position, transform.position );
-       // Debug.Log(_HarvestSquareObject.transform.position);
-        Debug.Log(transform.position);
-        Debug.Log(distance);
         _HarvestCollider.enabled = distance < maxDistance;
 
     }
